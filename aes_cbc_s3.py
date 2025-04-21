@@ -11,7 +11,7 @@ class AesCbcS3(s3format):
   def EncodeCBC(self, key, iv):
     # 暗号化
     cipher = AES.new(key, AES.MODE_CBC, iv)
-    self.__enc_data_bytes = cipher.encrypt(pad(self.GetByte(), AES.block_size))
+    self.__enc_data_bytes = cipher.encrypt(self.GetByte())
   
   # 暗号化したデータを取得
   def GetEncodedData(self):
