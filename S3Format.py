@@ -34,7 +34,7 @@ class S3Format:
 
   # データ部分のByteArrayを返す
   def GetByteArray(self):
-    return bytearray(self.__data_bytes)
+    return bytearray(self.GetByte())
   
   # データを返す
   def GetByte(self):
