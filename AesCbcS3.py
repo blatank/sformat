@@ -29,6 +29,14 @@ class AesCbcS3(s3format):
     self.__enc_data_bytes = cipher.encrypt(self.GetByte())
   
   # 暗号化したデータを取得
-  def GetEncodedData(self):
+  def GetEncodedByte(self):
     return self.__enc_data_bytes
   
+  # 暗号化したデータのbatearrayを取得
+  def GetEncodedByteArray(self):
+    return bytearray(self.GetEncodedByte())
+
+  # バイナリデータファイルを出力する
+  def WriteEncodedBinFile(self, output_file_path):
+    with open(output_file_path, 'wb') as f:
+      f.write(self.GetEncodedByteArray())
