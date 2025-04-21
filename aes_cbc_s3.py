@@ -1,7 +1,6 @@
 import s3format
 import json
 from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad
 
 class AesCbcS3(s3format):
   def __init__(self, file_path):
