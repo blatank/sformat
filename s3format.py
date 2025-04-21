@@ -35,6 +35,10 @@ class S3Format:
   # データ部分のByteArrayを返す
   def GetByteArray(self):
     return bytearray(self.__data_bytes)
+  
+  # データを返す
+  def GetByte(self):
+    return self.__data_bytes
 
   # バイナリデータファイルを出力する
   def WriteBinFile(self, output_file_path):
