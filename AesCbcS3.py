@@ -1,18 +1,18 @@
-import s3format
+from S3Format import S3Format
 import json
 from Crypto.Cipher import AES
 
-class AesCbcS3(s3format):
+class AesCbcS3(S3Format):
   def __init__(self, file_path):
     self.__enc_data_bytes = []
 
     # 設定ファイル(AesCbcS3.json)から読み出し
-    with open("aes_config.json", "r") as f:
+    with open("AesCbcS3.json", "r") as f:
       config = json.load(f)
 
     self.__key = bytes.fromhex(config["key"])
     self.__iv  = bytes.fromhex(config["iv"])
-    pass
+    # super(file_path)
 
   # IV取得
   def _GetIV(self):
