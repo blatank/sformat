@@ -6,7 +6,6 @@ class S3Format:
 
     # ファイル解析
     self.Parse()
-    pass
   
   # ファイルパスを返す
   def FilePath(self):
